@@ -14,6 +14,7 @@ class CreateInstallateursTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('installateurs');
         Schema::create('installateurs', function (Blueprint $table) {
             $table->id('id');
             $table->text('nom_societe');
@@ -31,6 +32,6 @@ class CreateInstallateursTable extends Migration
      */
     public function down()
     {
-        Schema::drop('installateurs');
+        Schema::dropIfExists('installateurs');
     }
 }

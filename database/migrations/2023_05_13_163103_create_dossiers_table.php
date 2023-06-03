@@ -14,6 +14,7 @@ class CreateDossiersTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('dossiers');
         Schema::create('dossiers', function (Blueprint $table) {
             $table->id('id');
             $table->foreignId('district_id')->constrained('districts');
@@ -44,6 +45,6 @@ class CreateDossiersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('dossiers');
+        Schema::dropIfExists('dossiers');
     }
 }
